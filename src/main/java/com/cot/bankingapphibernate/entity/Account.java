@@ -7,9 +7,11 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-@Entity(name = "accouts")
+@Entity(name = "accounts")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -26,7 +28,8 @@ public class Account {
     @Column(name = "balance")
     private long balance;
 
-
+//    @OneToMany(mappedBy = "account")
+//    private Set<Transaction> transactions = new HashSet<>();
 
 //    @ManyToMany
 //    @JoinTable(name = "l_author_book",

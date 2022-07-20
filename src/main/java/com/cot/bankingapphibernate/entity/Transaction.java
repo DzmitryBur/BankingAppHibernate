@@ -1,5 +1,6 @@
 package com.cot.bankingapphibernate.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,15 +21,17 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "name")
-    private String name;
-
     @Column(name = "date")
     @Temporal(TemporalType.DATE)
     private Date date;
 
     @Column(name = "amount")
     private String amount;
+
+    @ManyToOne
+    @JsonBackReference
+    @JoinColumn(name = "accounts_id", nullable = false)
+    private Account account;
 
 
 //    @ManyToMany
