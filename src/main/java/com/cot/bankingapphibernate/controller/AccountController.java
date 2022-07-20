@@ -1,0 +1,39 @@
+package com.cot.bankingapphibernate.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/account")
+public class AccountController {
+
+    @Autowired
+    private AccountService accountService;
+
+    @GetMapping
+    public List<Account> getAll() {
+        return accountService.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public Account getById(@PathVariable long id) {
+        return accountService.getById(id);
+    }
+
+    @PostMapping
+    public Account create(@RequestBody Account account) {
+        return accountService.create(account);
+    }
+
+    @PutMapping
+    public Account update(@RequestBody Account account) {
+        return accountService.update(account);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable long id) {
+        accountService.delete(id);
+    }
+}
