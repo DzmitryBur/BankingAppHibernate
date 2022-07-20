@@ -1,5 +1,6 @@
 package com.cot.bankingapphibernate.service;
 
+import com.cot.bankingapphibernate.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
