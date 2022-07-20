@@ -1,6 +1,6 @@
 package com.cot.bankingapphibernate.repository;
 
-import com.example.hiber.entity.Author;
+import com.cot.bankingapphibernate.entity.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,5 +1,6 @@
 package com.cot.bankingapphibernate.controller;
 
+import com.cot.bankingapphibernate.entity.Transaction;
 import com.cot.bankingapphibernate.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

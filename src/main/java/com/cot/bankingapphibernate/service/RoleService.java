@@ -1,5 +1,6 @@
 package com.cot.bankingapphibernate.service;
 
+import com.cot.bankingapphibernate.entity.Role;
 import com.cot.bankingapphibernate.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
