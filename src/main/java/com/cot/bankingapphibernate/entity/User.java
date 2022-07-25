@@ -33,12 +33,6 @@ public class User {
     @Column(name = "residency")
     private String residency;
 
-    @Column(name = "login")
-    private String login;
-
-    @Column(name = "password")
-    private String password;
-
     @OneToMany(mappedBy = "user")
     private Set<Account> accounts = new HashSet<>();
 
