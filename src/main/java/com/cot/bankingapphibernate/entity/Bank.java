@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity(name = "banks")
@@ -31,11 +32,10 @@ public class Bank {
     @OneToMany(mappedBy = "bank")
     private Set<Account> accounts = new HashSet<>();
 
-
-//    @ManyToMany
-//    @JoinTable(name = "l_author_book",
-//            joinColumns = @JoinColumn(name = "author_id"),
-//            inverseJoinColumns = @JoinColumn(name = "book_id"))
-//    @JsonIgnoreProperties("authors")
-//    private List<Book> books;
+    @ManyToMany
+    @JoinTable(name = "users_banks",
+            joinColumns = @JoinColumn(name = "banks_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
+    @JsonIgnoreProperties("banks")
+    private List<User> users;
 }
