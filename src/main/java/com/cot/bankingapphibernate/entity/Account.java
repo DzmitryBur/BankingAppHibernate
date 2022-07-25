@@ -1,5 +1,6 @@
 package com.cot.bankingapphibernate.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,9 +8,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity(name = "accounts")
@@ -32,6 +31,11 @@ public class Account {
 
     @OneToMany(mappedBy = "account")
     private Set<Transaction> transactions = new HashSet<>();
+
+    @ManyToOne
+    @JsonBackReference
+    @JoinColumn(name = "banks_id", nullable = false)
+    private Bank bank;
 
 //    @ManyToMany
 //    @JoinTable(name = "l_author_book",
