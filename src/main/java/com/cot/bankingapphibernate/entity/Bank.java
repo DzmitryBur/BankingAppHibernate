@@ -14,6 +14,7 @@ import java.util.Set;
 @Entity(name = "banks")
 @Data
 @EqualsAndHashCode(exclude = "accounts")
+//@EqualsAndHashCode(exclude = "users")
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
@@ -32,8 +33,11 @@ public class Bank {
     @OneToMany(mappedBy = "bank")
     private Set<Account> accounts = new HashSet<>();
 
+//    @OneToMany(mappedBy = "bank")
+//    private Set<User> users = new HashSet<>();
+
     @ManyToMany
-    @JoinTable(name = "users_banks",
+    @JoinTable(name = "accounts",
             joinColumns = @JoinColumn(name = "bank_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     @JsonIgnoreProperties("banks")

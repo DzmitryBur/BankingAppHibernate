@@ -32,7 +32,7 @@ public class Transaction {
 
     @ManyToOne
     @JsonBackReference
-    @JoinColumn(name = "accounts_id", nullable = false)
+    @JoinColumn(name = "account_id", nullable = false)
     private Account account;
 
 

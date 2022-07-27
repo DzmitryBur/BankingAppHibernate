@@ -34,13 +34,13 @@ public class Account {
 
     @ManyToOne
     @JsonBackReference
-    @JoinColumn(name = "banks_id", nullable = false)
+    @JoinColumn(name = "bank_id", nullable = false)
     private Bank bank;
 
-//    @ManyToOne
-//    @JsonBackReference
-//    @JoinColumn(name = "user_id", nullable = false)
-//    private User user;
+    @ManyToOne
+    @JsonBackReference
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
 //    @ManyToMany
 //    @JoinTable(name = "l_author_book",
