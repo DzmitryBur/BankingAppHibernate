@@ -32,6 +32,14 @@ public class AccountService {
     public void delete(Long id) {
         accountRepository.deleteById(id);
     }
+
+    public void transferMoneyFromFirstToSecondIban(String ibanFirst, String ibanSecond, long money){
+        //1 вытащить 1 аккаунт по iban Account account1 =
+        //2 вытащить 2 аккаунт по iban Account account2 =
+        //3 Отнять у первого 500, создать транзакцию и createTransaction
+        // добавить второму 500 создать транзакцию и createTransaction
+        //4 update acc1 acc2
+    }
 }
 
 

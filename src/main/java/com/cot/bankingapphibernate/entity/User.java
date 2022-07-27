@@ -33,13 +33,13 @@ public class User {
     @Column(name = "residency")
     private String residency;
 
-    @OneToMany(mappedBy = "user")
-    private Set<Account> accounts = new HashSet<>();
+//    @OneToMany(mappedBy = "user")
+//    private Set<Account> accounts = new HashSet<>();
 
     @ManyToMany
     @JoinTable(name = "users_banks",
             joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "banks_id"))
+            inverseJoinColumns = @JoinColumn(name = "bank_id"))
     @JsonIgnoreProperties("users")
     private List<Bank> banks;
 

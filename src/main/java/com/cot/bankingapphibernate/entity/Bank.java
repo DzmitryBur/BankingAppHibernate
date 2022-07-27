@@ -34,7 +34,7 @@ public class Bank {
 
     @ManyToMany
     @JoinTable(name = "users_banks",
-            joinColumns = @JoinColumn(name = "banks_id"),
+            joinColumns = @JoinColumn(name = "bank_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     @JsonIgnoreProperties("banks")
     private List<User> users;
