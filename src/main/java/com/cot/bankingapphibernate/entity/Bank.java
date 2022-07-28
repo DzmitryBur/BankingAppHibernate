@@ -30,7 +30,7 @@ public class Bank {
     @Column(name = "swift")
     private String swift;
 
-    @OneToMany(mappedBy = "bank")
+    @OneToMany(mappedBy = "bank", fetch = FetchType.LAZY)
     private Set<Account> accounts = new HashSet<>();
 
 //    @OneToMany(mappedBy = "bank")
