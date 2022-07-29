@@ -30,16 +30,17 @@ public class Bank {
     @Column(name = "swift")
     private String swift;
 
-    @OneToMany(mappedBy = "bank", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "bank")
+//    @OneToMany(mappedBy = "bank", fetch = FetchType.LAZY)
     private Set<Account> accounts = new HashSet<>();
 
-//    @OneToMany(mappedBy = "bank")
-//    private Set<User> users = new HashSet<>();
+    @OneToMany(mappedBy = "bank")
+    private Set<User> users = new HashSet<>();
 
-    @ManyToMany
-    @JoinTable(name = "accounts",
-            joinColumns = @JoinColumn(name = "bank_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id"))
-    @JsonIgnoreProperties("banks")
-    private List<User> users;
+//    @ManyToMany
+//    @JoinTable(name = "accounts",
+//            joinColumns = @JoinColumn(name = "bank_id"),
+//            inverseJoinColumns = @JoinColumn(name = "user_id"))
+//    @JsonIgnoreProperties("banks")
+//    private List<User> users;
 }
